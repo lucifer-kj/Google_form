@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuteface AI Studio - AI Agents & Apps Masterclass</title>
+    <meta name="description" content="Join the AI Agents & Apps Masterclass by Cuteface AI Studio. Learn to build cutting-edge AI applications.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://970c326b84.imgdist.com/pub/bfra/zqr1ngea/vlc/hiv/kqn/Cuteface%20icon.png">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cuteface-ai-studio.com/masterclass-form">
+    <meta property="og:title" content="Cuteface AI Studio - AI Agents & Apps Masterclass">
+    <meta property="og:description" content="Join the AI Agents & Apps Masterclass by Cuteface AI Studio. Learn to build cutting-edge AI applications.">
+    <meta property="og:image" content="https://970c326b84.imgdist.com/pub/bfra/zqr1ngea/vlc/hiv/kqn/Cuteface%20icon.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cuteface-ai-studio.com/masterclass-form">
+    <meta property="twitter:title" content="Cuteface AI Studio - AI Agents & Apps Masterclass">
+    <meta property="twitter:description" content="Join the AI Agents & Apps Masterclass by Cuteface AI Studio. Learn to build cutting-edge AI applications.">
+    <meta property="twitter:image" content="https://970c326b84.imgdist.com/pub/bfra/zqr1ngea/vlc/hiv/kqn/Cuteface%20icon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFB6C1 0%, #8A2BE2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            width: 100%;
+            animation: slideUp 0.6s ease-out;
+            position: relative;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #FFB6C1, #8A2BE2);
+            width: 14%;
+            transition: width 0.3s ease;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+        }
+
+        .form-header h1 {
+            color: #333;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+
+        /* Multi-step Navigation */
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            gap: 10px;
+        }
+
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e1e5e9;
+            transition: all 0.3s ease;
+        }
+
+        .step-dot.active {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            transform: scale(1.2);
+        }
+
+        .step-dot.completed {
+            background: #4CAF50;
+        }
+
+        /* Form Steps */
+        .form-step {
+            display: none;
+            animation: fadeInSlide 0.4s ease-out;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        @keyframes fadeInSlide {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .step-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-1px);
+        }
+
+        .form-input.error {
+            border-color: #f44336;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .error-text {
+            color: #f44336;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .radio-group, .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .radio-option, .checkbox-option {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fff;
+            position: relative;
+        }
+
+        .radio-option.error, .checkbox-option.error,
+        .radio-option.error input[type="radio"] ~ label,
+        .checkbox-option.error input[type="checkbox"] ~ label {
+            border-color: #f44336;
+            background: #fff5f5;
+            color: #f44336;
+        }
+
+        .radio-group.error-group .radio-option,
+        .checkbox-group.error-group .checkbox-option {
+            border-color: #f44336;
+            animation: shake 0.5s ease-in-out;
+        }
+
+        .radio-option:hover, .checkbox-option:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+            transform: translateY(-2px);
+        }
+
+        .radio-option input[type="radio"], .checkbox-option input[type="checkbox"] {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            accent-color: #667eea;
+        }
+
+        .radio-option:has(input:checked), .checkbox-option:has(input:checked) {
+            border-color: #667eea;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            transform: translateY(-2px);
+        }
+
+        .radio-option input[type="radio"]:checked ~ label,
+        .checkbox-option input[type="checkbox"]:checked ~ label {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Button Styles */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: space-between;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #f1f3f4;
+            color: #333;
+            border: 2px solid #e1e5e9;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .loading-spinner {
+            display: none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top: 2px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .submit-btn.loading .loading-spinner {
+            display: block;
+        }
+
+        .submit-btn.loading .btn-text {
+            opacity: 0;
+        }
+
+        /* Auto-save indicator */
+        .auto-save-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .auto-save-indicator.show {
+            opacity: 1;
+        }
+
+        /* Analytics Panel */
+        .analytics-info {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.8em;
+            opacity: 0.7;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-weight: 600;
+            animation: bounceIn 0.6s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Conditional fields animation */
+        .conditional-field {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+
+        .conditional-field.show {
+            max-height: 200px;
+            opacity: 1;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+            
+            .form-header h1 {
+                font-size: 1.8em;
+            }
+            
+            .radio-group, .checkbox-group {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            .analytics-info {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="form-header">
+            <img src="https://970c326b84.imgdist.com/pub/bfra/zqr1ngea/vlc/hiv/kqn/Cuteface%20icon.png" alt="Cuteface AI Studio Logo" width="80" class="logo">
+            <h1>Cuteface AI Studio</h1>
+            <p>AI Agents & Apps Masterclass Form</p>
+        </div>
+
+        <div class="step-indicator">
+            <div class="step-dot active"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+            <div class="step-dot"></div>
+        </div>
+
+        <form id="customForm" action="https://docs.google.com/forms/d/e/1FAIpQLScCd46nqWvkaE8IsALHK6WsZMW7-qY0FG-RtYowFo1zmG0iMQ/formResponse" method="POST" target="hidden_iframe">
+            
+            <!-- Step 1: Basic Info -->
+            <div class="form-step active" data-step="1">
+                <div class="step-title">👋 Let's get to know you</div>
+                <div class="form-group">
+                    <label for="name">What's your name? *</label>
+                    <input type="text" id="name" name="entry.1939770080" class="form-input" required>
+                    <div class="error-text">Please enter your name</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">What's your email? *</label>
+                    <input type="email" id="email" name="entry.511946068" class="form-input" required>
+                    <div class="error-text">Please enter a valid email</div>
+                </div>
+            </div>
+
+            <!-- Step 2: Occupation -->
+            <div class="form-step" data-step="2">
+                <div class="step-title">💼 Your Professional Background</div>
+                <div class="form-group">
+                    <label>What's your current occupation? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="student" name="entry.838640245" value="Student" required>
+                            <label for="student">🎓 Student</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="professional" name="entry.838640245" value="Professional" required>
+                            <label for="professional">💼 Professional</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="entrepreneur" name="entry.838640245" value="Entrepreneur" required>
+                            <label for="entrepreneur">🚀 Entrepreneur</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="freelancer" name="entry.838640245" value="Freelancer" required>
+                            <label for="freelancer">💻 Freelancer</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="other" name="entry.838640245" value="Other" required>
+                            <label for="other">🔄 Other</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: AI Experience -->
+            <div class="form-step" data-step="3">
+                <div class="step-title">🤖 Your AI Experience</div>
+                <div class="form-group">
+                    <label>What's your AI experience level? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="beginner" name="entry.789266388" value="Beginner" required>
+                            <label for="beginner">🌱 Beginner</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="somewhat" name="entry.789266388" value="Somewhat Experienced" required>
+                            <label for="somewhat">📚 Somewhat Experienced</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="intermediate" name="entry.789266388" value="Intermediate" required>
+                            <label for="intermediate">⚡ Intermediate</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="advanced" name="entry.789266388" value="Advanced" required>
+                            <label for="advanced">🎯 Advanced</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4: Learning Interests -->
+            <div class="form-step" data-step="4">
+                <div class="step-title">📚 What You Want to Learn</div>
+                <div class="form-group">
+                    <label>What do you hope to learn? (Select all that apply)</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="ai_apps" name="entry.1110008482" value="AI Apps">
+                            <label for="ai_apps">📱 AI Apps</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="ai_integration" name="entry.1110008482" value="AI Integration">
+                            <label for="ai_integration">🔗 AI Integration</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="dev_tools" name="entry.1110008482" value="Development Tools">
+                            <label for="dev_tools">🛠️ Development Tools</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="monetization" name="entry.1110008482" value="Monetization">
+                            <label for="monetization">💰 Monetization</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="ai_ethics" name="entry.1110008482" value="AI Ethics">
+                            <label for="ai_ethics">⚖️ AI Ethics</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="career_growth" name="entry.1110008482" value="Career Growth">
+                            <label for="career_growth">📈 Career Growth</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5: Career Counseling -->
+            <div class="form-step" data-step="5">
+                <div class="step-title">🎯 Career Development</div>
+                <div class="form-group">
+                    <label>Are you interested in career counseling? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="very_interested" name="entry.954159227" value="Very Interested" required>
+                            <label for="very_interested">🔥 Very Interested</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="somewhat_interested" name="entry.954159227" value="Somewhat Interested" required>
+                            <label for="somewhat_interested">👍 Somewhat Interested</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="not_interested" name="entry.954159227" value="Not Interested" required>
+                            <label for="not_interested">❌ Not Interested</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6: Contact Method -->
+            <div class="form-step" data-step="6">
+                <div class="step-title">📞 How Should We Contact You?</div>
+                <div class="form-group">
+                    <label>What's your preferred contact method? *</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="email_contact" name="entry.1867958368" value="Email" required>
+                            <label for="email_contact">📧 Email</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="phone" name="entry.1867958368" value="Phone" required>
+                            <label for="phone">📞 Phone</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="linkedin" name="entry.1867958368" value="LinkedIn" required>
+                            <label for="linkedin">🔗 LinkedIn</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="no_followup" name="entry.1867958368" value="No Follow Up" required>
+                            <label for="no_followup">🚫 No Follow Up</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conditional Phone Field -->
+                <div class="form-group conditional-field" id="phoneField">
+                    <label for="phone_number">Please enter your phone number:</label>
+                    <input type="tel" id="phone_number" name="entry.1095311230" class="form-input" placeholder="+1 (123) 456-7890" pattern="[0-9+\-\s()]+">
+                </div>
+            </div>
+
+            <!-- Step 7: Review & Submit -->
+            <div class="form-step" data-step="7">
+                <div class="step-title">✅ Review Your Information</div>
+                <div id="reviewContent"></div>
+                
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Submit Survey</span>
+                    <div class="loading-spinner"></div>
+                </button>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="button-group" id="navigationButtons">
+                <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">← Previous</button>
+                <button type="button" class="btn btn-primary" id="nextBtn">Next →</button>
+            </div>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            🎉 Thank you! Your response has been submitted successfully.
+        </div>
+
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleSubmission()"></iframe>
+    </div>
+
+    <!-- Auto-save Indicator -->
+    <div class="auto-save-indicator" id="autoSaveIndicator">
+        💾 Draft saved
+    </div>
+
+    <!-- Analytics Panel -->
+    <div class="analytics-info" id="analyticsInfo">
+        <div>Time spent: <span id="timeSpent">0:00</span></div>
+        <div>Current step: <span id="currentStepInfo">1 of 7</span></div>
+    </div>
+
+    <script>
+        // Form State Management
+        let currentStep = 1;
+        let totalSteps = 7;
+        let formData = {};
+        let startTime = new Date();
+        let isSubmitted = false;
+
+        // Initialize form
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+            loadSavedData();
+            startTimer();
+            setupEventListeners();
+            trackAnalytics();
+        });
+
+        // Event Listeners Setup
+        function setupEventListeners() {
+            // Navigation buttons
+            document.getElementById('nextBtn').addEventListener('click', nextStep);
+            document.getElementById('prevBtn').addEventListener('click', prevStep);
+
+            // Auto-save on input change
+            document.querySelectorAll('input, select, textarea').forEach(input => {
+                input.addEventListener('change', autoSave);
+                input.addEventListener('input', debounce(autoSave, 1000));
+            });
+
+            // Conditional field for phone
+            document.querySelectorAll('input[name="entry.1867958368"]').forEach(radio => {
+                radio.addEventListener('change', togglePhoneField);
+            });
+
+            // Real-time validation
+            document.querySelectorAll('.form-input').forEach(input => {
+                input.addEventListener('blur', validateField);
+                input.addEventListener('input', clearError);
+            });
+        }
+
+        // Step Navigation
+        function nextStep() {
+            if (validateCurrentStep()) {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                    updateProgress();
+                    updateNavigation();
+                }
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+                updateProgress();
+                updateNavigation();
+            }
+        }
+
+        function showStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(s => {
+                s.classList.remove('active');
+            });
+            
+            // Show current step
+            document.querySelector(`[data-step="${step}"]`).classList.add('active');
+            
+            // Update step indicators
+            document.querySelectorAll('.step-dot').forEach((dot, index) => {
+                dot.classList.remove('active', 'completed');
+                if (index + 1 < step) {
+                    dot.classList.add('completed');
+                } else if (index + 1 === step) {
+                    dot.classList.add('active');
+                }
+            });
+
+            // Special handling for review step
+            if (step === 7) {
+                generateReview();
+            }
+        }
+
+        function updateProgress() {
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            document.getElementById('currentStepInfo').textContent = `${currentStep} of ${totalSteps}`;
+        }
+
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const navButtons = document.getElementById('navigationButtons');
+
+            prevBtn.style.display = currentStep > 1 ? 'block' : 'none';
+            
+            if (currentStep === totalSteps) {
+                navButtons.style.display = 'none';
+            } else {
+                navButtons.style.display = 'flex';
+                nextBtn.textContent = currentStep === totalSteps - 1 ? 'Review →' : 'Next →';
+            }
+        }
+
+        // Validation
+        function validateCurrentStep() {
+            const currentStepElement = document.querySelector(`[data-step="${currentStep}"]`);
+            const requiredFields = currentStepElement.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!validateField(field)) {
+                    isValid = false;
+                }
+            });
+
+            return isValid;
+        }
+
+        function validateField(field) {
+            let value = field.type === 'radio' ? document.querySelector(`input[name="${field.name}"]:checked`)?.value || '' : field.value.trim();
+            const isRequired = field.hasAttribute('required');
+            const errorText = field.closest('.form-group')?.querySelector('.error-text');
+            const fieldGroup = field.closest('.radio-group, .checkbox-group');
+            
+            if (isRequired && !value) {
+                field.classList.add('error');
+                if (fieldGroup) {
+                    fieldGroup.classList.add('error-group');
+                }
+                if (errorText) {
+                    errorText.style.display = 'block';
+                }
+                return false;
+            }
+            
+            // Additional validation for specific field types
+            if (field.type === 'email' && value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    field.classList.add('error');
+                    if (errorText) {
+                        errorText.textContent = 'Please enter a valid email address';
+                        errorText.style.display = 'block';
+                    }
+                    return false;
+                }
+            }
+            
+            field.classList.remove('error');
+            if (fieldGroup) {
+                fieldGroup.classList.remove('error-group');
+            }
+            if (errorText) {
+                errorText.style.display = 'none';
+            }
+            return true;
+        }
+
+        function clearError(e) {
+            const field = e.target;
+            field.classList.remove('error');
+            const errorText = field.parentNode.querySelector('.error-text');
+            if (errorText) errorText.style.display = 'none';
+        }
+
+        // Conditional Fields
+        function togglePhoneField() {
+            const phoneField = document.getElementById('phoneField');
+            const phoneRadio = document.getElementById('phone');
+            
+            if (phoneRadio.checked) {
+                phoneField.classList.add('show');
+                phoneField.style.maxHeight = '200px';
+            } else {
+                phoneField.classList.remove('show');
+                phoneField.style.maxHeight = '0';
+            }
+        }
+
+        // Auto-save functionality
+        function autoSave() {
+            const formData = new FormData(document.getElementById('customForm'));
+            const dataObj = {};
+            
+            for (let [key, value] of formData.entries()) {
+                if (dataObj[key]) {
+                    // Handle multiple values (checkboxes)
+                    if (Array.isArray(dataObj[key])) {
+                        dataObj[key].push(value);
+                    } else {
+                        dataObj[key] = [dataObj[key], value];
+                    }
+                } else {
+                    dataObj[key] = value;
+                }
+            }
+
+            // Save to localStorage (note: this won't work in Claude.ai artifacts)
+            try {
+                localStorage.setItem('formDraft', JSON.stringify(dataObj));
+                showAutoSaveIndicator();
+            } catch (e) {
+                console.log('Auto-save not available in this environment');
+            }
+        }
+
+        function loadSavedData() {
+            try {
+                const savedData = localStorage.getItem('formDraft');
+                if (savedData) {
+                    const data = JSON.parse(savedData);
+                    for (let [key, value] of Object.entries(data)) {
+                        const field = document.querySelector(`[name="${key}"]`);
+                        if (field) {
+                            if (field.type === 'radio' || field.type === 'checkbox') {
+                                if (Array.isArray(value)) {
+                                    value.forEach(v => {
+                                        const option = document.querySelector(`[name="${key}"][value="${v}"]`);
+                                        if (option) option.checked = true;
+                                    });
+                                } else {
+                                    const option = document.querySelector(`[name="${key}"][value="${value}"]`);
+                                    if (option) option.checked = true;
+                                }
+                            } else {
+                                field.value = value;
+                            }
+                        }
+                    }
+                }
+            } catch (e) {
+                console.log('No saved data found');
+            }
+        }
+
+        function showAutoSaveIndicator() {
+            const indicator = document.getElementById('autoSaveIndicator');
+            indicator.classList.add('show');
+            setTimeout(() => {
+                indicator.classList.remove('show');
+            }, 2000);
+        }
+
+        // Review Generation
+        function generateReview() {
+            const reviewContent = document.getElementById('reviewContent');
+            const formData = new FormData(document.getElementById('customForm'));
+            let reviewHTML = '<div style="background: #f8f9ff; padding: 20px; border-radius: 10px; margin-bottom: 20px;">';
+
+            // Name and Email
+            reviewHTML += `<h3>📋 Your Information</h3>`;
+            reviewHTML += `<p><strong>Name:</strong> ${formData.get('entry.1939770080') || 'Not provided'}</p>`;
+            reviewHTML += `<p><strong>Email:</strong> ${formData.get('entry.511946068') || 'Not provided'}</p>`;
+            
+            // Occupation
+            reviewHTML += `<p><strong>Occupation:</strong> ${formData.get('entry.838640245') || 'Not selected'}</p>`;
+            
+            // AI Experience
+            reviewHTML += `<p><strong>AI Experience:</strong> ${formData.get('entry.789266388') || 'Not selected'}</p>`;
+            
+            // Learning Interests
+            const learningInterests = formData.getAll('entry.1110008482');
+            reviewHTML += `<p><strong>Learning Interests:</strong> ${learningInterests.length > 0 ? learningInterests.join(', ') : 'None selected'}</p>`;
+            
+            // Career Counseling
+            reviewHTML += `<p><strong>Career Counseling Interest:</strong> ${formData.get('entry.954159227') || 'Not selected'}</p>`;
+            
+            // Contact Method
+            reviewHTML += `<p><strong>Preferred Contact:</strong> ${formData.get('entry.1867958368') || 'Not selected'}</p>`;
+            
+            reviewHTML += '</div>';
+            reviewHTML += '<p style="color: #666; font-size: 0.9em; text-align: center;">Please review your information above and click submit when ready.</p>';
+            
+            reviewContent.innerHTML = reviewHTML;
+        }
+
+        // Timer functionality
+        function startTimer() {
+            setInterval(() => {
+                const elapsed = new Date() - startTime;
+                const minutes = Math.floor(elapsed / 60000);
+                const seconds = Math.floor((elapsed % 60000) / 1000);
+                document.getElementById('timeSpent').textContent = 
+                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        // Analytics tracking
+        function trackAnalytics() {
+            // Track page visibility changes
+            document.addEventListener('visibilitychange', () => {
+                if (document.visibilityState === 'visible') {
+                    console.log('User returned to form');
+                } else {
+                    console.log('User left form');
+                }
+            });
+
+            // Track step completion times
+            window.stepTimes = {};
+            window.stepTimes[1] = new Date();
+        }
+
+        // Utility functions
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Form submission handling
+        function handleSubmission() {
+            if (isSubmitted) {
+                document.getElementById('successMessage').style.display = 'block';
+                document.getElementById('submitBtn').style.display = 'none';
+                
+                // Clear saved draft
+                try {
+                    localStorage.removeItem('formDraft');
+                } catch (e) {
+                    console.log('Could not clear draft');
+                }
+                
+                // Track completion
+                const totalTime = new Date() - startTime;
+                console.log(`Form completed in ${Math.floor(totalTime / 60000)} minutes`);
+                
+                setTimeout(() => {
+                    document.getElementById('customForm').style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        // Form submission event
+        document.getElementById('customForm').addEventListener('submit', function(e) {
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.classList.add('loading');
+            isSubmitted = true;
+            
+            setTimeout(() => {
+                submitBtn.classList.remove('loading');
+            }, 3000);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                if (currentStep < totalSteps) {
+                    nextStep();
+                }
+            } else if (e.key === 'Escape') {
+                if (currentStep > 1) {
+                    prevStep();
+                }
+            }
+        });
+
+        // Smooth focus transitions
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Initialize form on load
+        updateNavigation();
+    </script>
+</body>
+</html>
